@@ -29,6 +29,10 @@ const Customizer = () => {
     stylishShirt: false,
   });
 
+  const handleActiveEditorTab = (tabName) => {
+    activeEditorTab === tabName ? setActiveEditorTab("") : setActiveEditorTab(tabName);
+  }
+
   // show tab content depending on the activeTab
   const generateTabContent = () => {
     switch (activeEditorTab) {
@@ -131,7 +135,7 @@ const Customizer = () => {
                     key={tab.name}
                     tab={tab}
                     handleClick={() => {
-                      setActiveEditorTab(tab.name);
+                      handleActiveEditorTab(tab.name);
                     }}
                   />
                 ))}
